@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de LuisJPX</title>
+    <style>
+        /* Reset de márgenes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo y texto inicial (negro y blanco) */
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Menú horizontal con foto y nombre en la parte superior */
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Contenedor de la foto y nombre dentro del menú */
+        .menu .perfil {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu .perfil img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .menu .perfil h1 {
+            color: yellow;
+            font-size: 28px;
+        }
+
+        /* Estilo de los enlaces del menú */
+        .menu .enlaces {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .menu a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.3s, color 0.3s;
+            margin: 0 15px;
+        }
+
+        /* Efecto cuando el ratón pasa sobre los enlaces */
+        .menu a:hover {
+            transform: scale(1.1);
+            color: #ffcc00;
+        }
+
+        /* Contenedor de configuración */
+        .configuracion {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            background-color: #333;
+            width: 250px;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+
+        /* Estilo de las opciones del menú de configuración */
+        .configuracion h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .configuracion button {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #444;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .configuracion button:hover {
+            background-color: #666;
+        }
+
+        /* Estilo para ocultar la página */
+        .ocultar-pagina {
+            display: none;
+        }
+
+        /* Estilo para la transición de cambio de colores */
+        .modo-blanco {
+            background-color: white !important;
+            color: black !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menú horizontal con foto y nombre en la parte superior -->
+    <div class="menu">
+        <!-- Foto y nombre -->
+        <div class="perfil">
+            <img src="/img/9ef7dc7241f89d396a223cb9357456b0 - copia.jpg" alt="Foto de LuisJPX">
+            <h1>LuisJPX</h1>
+        </div>
+
+        <!-- Enlaces del menú -->
+        <div class="enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="#configuracion">Configuración</a>
+            <a href="contac.html">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Menú de Configuración en la parte derecha -->
+    <div class="configuracion">
+        <h2>Configuración</h2>
+        <button onclick="toggleModoBlanco()">Cambiar a Modo Blanco</button>
+        <button onclick="ocultarPagina()">Ocultar Página</button>
+        <button onclick="mostrarPagina()">Mostrar Página</button>
+    </div>
+
+    <!-- Página en blanco para ocultar -->
+    <div id="pagina-blanca" class="ocultar-pagina">
+        <h1>La página ha sido ocultada</h1>
+    </div>
+
+    <script>
+        // Función para cambiar entre modo blanco y modo oscuro
+        function toggleModoBlanco() {
+            document.body.classList.toggle('modo-blanco');
+        }
+
+        // Función para ocultar la página
+        function ocultarPagina() {
+            document.getElementById("pagina-blanca").style.display = "block";
+            document.body.style.display = "none";
+        }
+
+        // Función para mostrar la página nuevamente
+        function mostrarPagina() {
+            document.getElementById("pagina-blanca").style.display = "none";
+            document.body.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de LuisJPX</title>
+    <style>
+        /* Reset de márgenes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo negro con un color contrastante para texto */
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Menú horizontal con foto y nombre en la parte superior */
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Alineación de los elementos */
+            background-color: #333; /* Fondo gris oscuro */
+            padding: 25px 50px; /* Espaciado más amplio */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Contenedor de la foto y nombre dentro del menú */
+        .menu .perfil {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu .perfil img {
+            width: 90px; /* Aumenté el tamaño de la imagen */
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 20px; /* Espacio entre la foto y el nombre */
+        }
+
+        .menu .perfil h1 {
+            color: yellow;
+            font-size: 28px;
+        }
+
+        /* Estilo de los enlaces del menú */
+        .menu .enlaces {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .menu a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.3s, color 0.3s;
+            margin: 0 15px; /* Espaciado entre los enlaces */
+        }
+
+        /* Efecto cuando el ratón pasa sobre los enlaces */
+        .menu a:hover {
+            transform: scale(1.1);
+            color: #ffcc00; /* Color dorado cuando se pasa el ratón */
+        }
+
+        /* Estilo de la palabra Proyectos */
+        .proyectos-title {
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+
+        /* Contenedor de Silent Client */
+        .silent-client-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Estilo de Silent Client */
+        .silent-client {
+            font-size: 50px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        /* Cuadro PNG que aparece encima de la palabra */
+        .silent-client-box {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 240px; /* Tamaño del cuadro PNG */
+            height: 120px; /* Altura del cuadro PNG */
+            background: url('img/cuadro.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0; /* Inicialmente invisible */
+            transition: opacity 0.3s ease-in-out; /* Desvanecimiento */
+        }
+
+        /* Efecto cuando el ratón pasa sobre el cuadro */
+        .silent-client-container:hover .silent-client-box {
+            opacity: 1; /* Hace visible el cuadro */
+        }
+
+        /* Efecto cuando el ratón pasa sobre el cuadro */
+        .silent-client-container:hover .silent-client {
+            color: transparent; /* Hace desaparecer el texto */
+            margin-bottom: 200px; /* Desplaza el texto hacia abajo */
+        }
+
+        .silent-client-container:hover img {
+            opacity: 1; /* Aparece el logo */
+            transform: scale(1.5) translateX(-50%); /* Hace que el logo se haga más grande */
+        }
+
+        .silent-client-container img {
+            width: 120px; /* Tamaño del logo */
+            height: 120px;
+            vertical-align: middle;
+            margin-left: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Centrado del logo */
+            opacity: 0; /* Inicialmente invisible */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease; /* Transición suave para el logo */
+        }
+
+        /* Descripción de Silent Client */
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            margin-bottom: 40px;
+            transition: margin-top 0.5s ease; /* Animación de la descripción */
+        }
+
+        /* Logo de Discord como imagen de botón */
+        .discord-button img {
+            width: 50px; /* Tamaño del logo de Discord */
+            height: 45px;
+            margin-top: 10px;
+        }
+
+        /* Línea blanca horizontal */
+        hr {
+            border: 2px solid white;
+            width: 100%; /* Línea extendida a toda la página */
+            margin: 30px auto; /* Separación de la línea */
+        }
+
+        /* Palabra "Proximamente..." alineada a la izquierda y resaltada en dorado */
+        .proximamente {
+            font-size: 35px;
+            color: gold;
+            font-weight: bold;
+            margin-top: 40px;
+            text-align: left;
+            margin-left: 50px; /* Alineación a la izquierda */
+            transition: margin-top 0.5s ease; /* Animación para la palabra Proximamente */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menú horizontal con foto y nombre en la parte superior -->
+    <div class="menu">
+        <!-- Foto y nombre -->
+        <div class="perfil">
+            <img src="/img/9ef7dc7241f89d396a223cb9357456b0 - copia.jpg" alt="Foto de LuisJPX">
+            <h1>LuisJPX</h1>
+        </div>
+
+        <!-- Enlaces del menú -->
+        <div class="enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="confi.html">Configuración</a>
+            <a href="contac.html">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Palabra "Proyectos" -->
+    <div class="proyectos-title">Proyectos</div>
+
+    <!-- Silent Client con su logo -->
+    <div class="silent-client-container">
+        <div class="silent-client">
+            Silent Client
+        </div>
+        <div class="silent-client-box"></div>
+        <img src="img/image.webp"Logo Silent Client"> <!-- Cambia esta imagen a tu logo de Silent Client -->
+    </div>
+
+    <!-- Descripción de Silent Client -->
+    <div class="description">
+        Silent Client es un launcher de Minecraft que aún está en desarrollo, contamos con un servidor de Discord el cual es el siguiente:
+    </div>
+
+    <!-- Botón de Discord (solo imagen) -->
+    <a href="https://discord.gg/tu-invitacion" class="discord-button" target="_blank">
+        <img src="img/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord Logo">
+    </a>
+
+    <!-- Línea blanca horizontal -->
+    <hr>
+
+    <!-- Palabra "Proximamente..." alineada a la izquierda y resaltada -->
+    <div class="proximamente">Proximamente...</div>
+
+</body>
+</html>

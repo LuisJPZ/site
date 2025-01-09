@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de LuisJPX</title>
+    <style>
+        /* Reset de márgenes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo negro con un color contrastante para texto */
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Menú horizontal con foto y nombre en la parte superior */
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 25px 50px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Contenedor de la foto y nombre dentro del menú */
+        .menu .perfil {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu .perfil img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .menu .perfil h1 {
+            color: yellow;
+            font-size: 28px;
+        }
+
+        /* Estilo de los enlaces del menú */
+        .menu .enlaces {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .menu a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            transition: transform 0.3s, color 0.3s;
+            margin: 0 15px;
+        }
+
+        .menu a:hover {
+            transform: scale(1.1);
+            color: #ffcc00;
+        }
+
+        /* Estilo para la sección de contacto */
+        #contacto {
+            padding: 50px;
+            background-color: #222;
+            border-radius: 10px;
+            width: 80%;
+            margin: 50px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #contacto h2 {
+            font-size: 36px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilo de los campos de formulario */
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            transform: scale(1.05);
+            border: 2px solid #ffcc00;
+            outline: none;
+        }
+
+        /* Estilo del botón de envío */
+        button {
+            padding: 15px 25px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff9900;
+        }
+
+        /* Animación para el formulario */
+        #contacto {
+            opacity: 0;
+            animation: aparecer 1s forwards;
+        }
+
+        @keyframes aparecer {
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Menú horizontal con foto y nombre en la parte superior -->
+    <div class="menu">
+        <div class="perfil">
+            <img src="/img/9ef7dc7241f89d396a223cb9357456b0 - copia.jpg" alt="Foto de LuisJPX">
+            <h1>LuisJPX</h1>
+        </div>
+
+        <div class="enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="#configuracion">Configuración</a>
+            <a href="contac.html">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div id="contacto">
+        <h2>Contacta Conmigo</h2>
+        <form action="enviar_contacto.php" method="POST">
+            <input type="text" name="nombre" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
+            <textarea name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+</html>
